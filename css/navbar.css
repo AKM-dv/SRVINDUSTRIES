@@ -1,0 +1,88 @@
+/* Navbar Styles */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow-sm);
+  transition: background-color var(--transition-normal);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.logo-accent {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--spacing-xl);
+}
+
+.nav-links a {
+  position: relative;
+  color: var(--text-dark);
+  font-weight: 500;
+  padding: var(--spacing-xs) 0;
+  transition: color var(--transition-fast);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent);
+  transition: width var(--transition-normal);
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+  color: var(--accent);
+}
+
+.nav-links a:hover::after, 
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-cta {
+  background-color: var(--primary);
+  color: var(--white) !important;
+  padding: var(--spacing-xs) var(--spacing-md) !important;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast) !important;
+}
+
+.nav-cta:hover {
+  background-color: var(--primary-light);
+}
+
+.nav-cta::after {
+  display: none !important;
+}
+
+/* Mobile Nav Toggle */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  cursor: pointer;
+}
